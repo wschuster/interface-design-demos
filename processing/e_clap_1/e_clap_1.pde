@@ -4,17 +4,11 @@ Minim minim;
 AudioInput in;
 
 PFont font;
-
 float levels;
 
-
-void setup()
-{
-  size(512, 200, P2D);
+void setup() {
+  size(800, 600);
   minim = new Minim(this);
-  minim.debugOn();
-  
-  frameRate(30);
 
   font = createFont("Helvetica", 32);
   textFont(font, 32);
@@ -26,39 +20,19 @@ void setup()
 
 void draw() {
   
-  if (levels > 10) {
-   background(0,0,255);
-  } else {
-   background(0,0,0);
-  }
-  //println(levels);
-  //if (levels > .5) {
-  //  background(0,0,255);
-  //} else if (levels > 1) {
-  //  background(255,255,0);
-  //} else if (levels > 2) {
-  //  background(255,0,255);
-  //} else {
-  //  background(255,0,0);
-  //}
-  
-  fill(0,0,255);
-  
-  //int time = millis();
-  //if (millis() > time + 1000) {
-  //}
-  
-  text("= " + levels, 10, 10);  
+  background(0);
 
+  // Grabs the mic sound value 
   for(int i = 0; i < in.bufferSize() - 1; i++) {
     levels = in.mix.get(i)*200;
   }
-  
+
+  // Outputs the mic level as it changes
+  text("= " + levels, 10, 10);  
 }
 
 
 void stop() {
-  // always close Minim audio classes when you are done with them
   in.close();
   minim.stop();
   super.stop();
