@@ -16,7 +16,6 @@ void setup() {
 
 void draw() {
   fill(255); //white
-  text(s2, 10, 55);
   while (voce.SpeechInterface.getRecognizerQueueSize () > 0) {
     s = voce.SpeechInterface.popRecognizedString();
     s2 = s;
