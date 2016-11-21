@@ -1,0 +1,10 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Test Grammar file
+ */
+
+grammar VIKI;
+
+public <VIKI> = ( How are you | Red | Blue | Green | Motor | Orange) * ;
+
