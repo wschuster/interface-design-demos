@@ -7,7 +7,7 @@ String s2;
 void setup() {
   size(800, 600);
   voce.SpeechInterface.init(sketchPath("code/"), true, true, sketchPath("data/"), "test");
-  font = createFont("RomanD", 20); 
+  font = createFont("Helvetica", 20); 
   textFont(font); 
   String t = "YO";
   s2 = "YO";
@@ -23,23 +23,18 @@ void draw() {
     if (s.equals("green")) {
       println ("You said Green!");
       background(0,255,0);
-      text("Green",10,10);
     } else if (s.equals("orange")) {
       println ("You said Orange!");
       background(255,165,0);
-      text("Orange",10,10);
     } else if (s.equals("blue")) {
       background(0,0,255);
       println ("You said Blue!");
-      text("Blue",10,10);      
     } else if (s.equals("red")) {
-      background(0,255,0);
+      background(255,0,0);
       println ("You said Red!");
-      text("Red",10,10);
     } else if (s.equals("how are you")) {
       background(0,0,0);
       println ("I\'M GOOOOOOOD");
-      text("I'm good!",10,10);
     }
   }
 }
