@@ -2,21 +2,15 @@ import processing.video.*;
 
 Movie mov1;
 Movie mov2;
-Movie mov3;
-Movie mov4;
 
 boolean playMov1;
 boolean playMov2;
-boolean playMov3;
-boolean playMov4;
 
 void setup() {
   size(640, 360);
   background(0);
-  mov1 = new Movie(this, "transit.mkv");
-  mov2 = new Movie(this, "transit.mkv");
-  mov3 = new Movie(this, "transit.mkv");
-  mov4 = new Movie(this, "transit.mkv");
+  mov1 = new Movie(this, "tyler-1.mov");
+  mov2 = new Movie(this, "tyler-2.mov");
 }
 
 void movieEvent(Movie m) {
@@ -25,12 +19,28 @@ void movieEvent(Movie m) {
 
 void draw() {
   if(playMov1 == true) {
-    playAndShowMovie1();
+    mov1.play();
+    mov2.stop();
+    image(mov1, 0, 0, width/2, height/2);
   } else if(playMov2 == true) {
-    playAndShowMovie1();
-} else if(playMov3 == true) {
-    playAndShowMovie1();
-  } else if(playMov4 == true) {
-    playAndShowMovie1();
+    mov2.play();
+    mov1.stop();
+    image(mov2, 0, 0, width/2, height/2);
+  }
+}
+
+void keyPressed() {
+  if (key == 'q' ) {  
+    playMov1 = true;
+  } else if (key == 'w' ) {
+    playMov2 = true;
+  }
+}
+
+void keyReleased() {
+  if (key == 'q' ) {  
+    playMov1 = false;
+  } else if (key == 'w' ) {
+    playMov2 = false;
   }
 }
