@@ -13,9 +13,11 @@ void draw() {
 void keyPressed() {
   if (keyCode == UP) {
     println("UP");
+    background(255);
     image(img1, 0, 0);
   } else if (keyCode == DOWN) {
     println("DOWN");
+    background(255);
     image(img2, 0, 0);
   }
 }
