@@ -65,7 +65,7 @@ void draw() {
   //If face is inside the box 
   if (faceXPos < width/4 ) {
     //Do stuff here...
-    println("LEFT"); 
+    println("LEFT");
   } else if (faceXPos > width/4*3 ) {
     println("RIGHT"); 
   } else {
