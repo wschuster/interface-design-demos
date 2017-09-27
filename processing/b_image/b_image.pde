@@ -10,7 +10,7 @@ void setup() {
 
 void draw() {
   //random(min,max);
-  image(img1, mouseX, mouseY, random(0,50), random(0,50));
-  image(img2, mouseX, mouseY, random(0,50), random(0,50));
+  image(img1, mouseX, mouseY, mouseY, mouseY);
+  image(img2, mouseX, mouseY, mouseX, mouseX);
   //image(img2, random(0,800), random(0,600), random(0,800), random(0,600));
 }

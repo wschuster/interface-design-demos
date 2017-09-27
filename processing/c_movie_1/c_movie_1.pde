@@ -13,8 +13,12 @@ void movieEvent(Movie m) {
 }
 
 void draw() {
+  //running the DVD
   mov1.play();
-  image(mov1, random(0,width), random(0,height), random(0,100), random(0,100));
+  
+  //turning on the TV
+  image(mov1, 0, 0, 700, 400);
+  //image(mov1, random(0,width), random(0,height), random(0,100), random(0,100));
 
 }   
 
